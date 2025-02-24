@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
-{
-    // Tags
-    private const string _PLAYERTAG = "Player";
+{ 
 
     // Rooms
     [SerializeField] private int _roomIndex;
@@ -14,7 +12,7 @@ public class NextScene : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if(collision.gameObject.tag == _PLAYERTAG)
+        if(collision.gameObject.tag == Structs.Tags.playerTag)
         {
             Debug.Log("Collision");
             SceneManager.LoadScene(_roomIndex);
